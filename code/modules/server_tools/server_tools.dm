@@ -74,7 +74,7 @@ GLOBAL_PROTECT(reboot_mode)
 			var/msg = params["message"]
 			if(!istext(msg) || !msg)
 				return "No message set!"
-			to_chat(src, "<span class='boldannounce'>[html_encode(msg)]</span>")
+			to_chat(src, "<span class='boldannounce'>[rhtml_encode(msg)]</span>")
 			return "SUCCESS"
 		if(SERVICE_CMD_IRC_STATUS)
 			var/rtod = REALTIMEOFDAY
