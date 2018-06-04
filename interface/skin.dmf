@@ -138,17 +138,26 @@ macro "default"
 		name = "CTRL+SHIFT+F1+REP"
 		command = ".options"
 	elem
+		name = "F2"
+		command = "ooc"
+	elem
 		name = "F2+REP"
 		command = ".screenshot auto"
 	elem
 		name = "SHIFT+F2+REP"
 		command = ".screenshot"
 	elem
+		name = "F3"
+		command = "say"
+	elem
+		name = "F4"
+		command = "me"
+	elem
 		name = "F5"
-		command = "Aghost"
+		command = "Asay"
 	elem
 		name = "F6"
-		command = "Player-Panel"
+		command = "Aghost"
 	elem
 		name = "F7"
 		command = "Toggle-Build-Mode-Self"
