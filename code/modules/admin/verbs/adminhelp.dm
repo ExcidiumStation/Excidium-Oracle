@@ -144,6 +144,7 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/admin_help_tickets, new)
 /datum/admin_help
 	var/id
 	var/name
+	var/name_ascii
 	var/state = AHELP_ACTIVE
 
 	var/opened_at
@@ -173,6 +174,7 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/admin_help_tickets, new)
 	opened_at = world.time
 
 	name = msg
+	name_ascii = r_text2ascii(msg)
 
 	initiator = C
 	initiator_ckey = initiator.ckey
@@ -412,7 +414,7 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/admin_help_tickets, new)
 /datum/admin_help/proc/Retitle()
 	var/new_title = input(usr, "Enter a title for the ticket", "Rename Ticket", name) as text|null
 	if(new_title)
-		name = new_title
+		name = sanitize(copytext(new_title,1,MAX_MESSAGE_LEN))
 		//not saying the original name cause it could be a long ass message
 		var/msg = "Ticket [TicketHref("#[id]")] titled [name] by [key_name_admin(usr)]"
 		message_admins(msg)
@@ -452,7 +454,7 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/admin_help_tickets, new)
 	. = ..()
 
 /obj/effect/statclick/ahelp/update()
-	return ..(ahelp_datum.name)
+	return ..(ahelp_datum.name_ascii)
 
 /obj/effect/statclick/ahelp/Click()
 	ahelp_datum.TicketPanel()

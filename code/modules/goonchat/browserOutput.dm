@@ -117,7 +117,7 @@ GLOBAL_DATUM_INIT(iconCache, /savefile, new("data/iconCache.sav")) //Cache of ic
 
 /datum/chatOutput/proc/ehjax_send(client/C = owner, window = "browseroutput", data)
 	if(islist(data))
-		data = json_encode(data)
+		data = r_json_encode(data)
 	C << output("[data]", "[window]:ehjaxCallback")
 
 //Sends client connection details to the chat to handle and save
@@ -127,7 +127,7 @@ GLOBAL_DATUM_INIT(iconCache, /savefile, new("data/iconCache.sav")) //Cache of ic
 	deets["clientData"]["ckey"] = owner.ckey
 	deets["clientData"]["ip"] = owner.address
 	deets["clientData"]["compid"] = owner.computer_id
-	var/data = json_encode(deets)
+	var/data = r_json_encode(deets)
 	ehjax_send(data = data)
 
 //Called by client, sent data to investigate (cookie history so far)
@@ -194,6 +194,7 @@ GLOBAL_DATUM_INIT(iconCache, /savefile, new("data/iconCache.sav")) //Cache of ic
 	message = replacetext(message, "\proper", "")
 	message = replacetext(message, "\n", "<br>")
 	message = replacetext(message, "\t", "[GLOB.TAB][GLOB.TAB]")
+	message = r_text2unicode(message)
 
 	for(var/I in targets)
 		//Grab us a client if possible
@@ -203,7 +204,7 @@ GLOBAL_DATUM_INIT(iconCache, /savefile, new("data/iconCache.sav")) //Cache of ic
 			continue
 
 		//Send it to the old style output window.
-		SEND_TEXT(C, original_message)
+		SEND_TEXT(C, russian_html2text(original_message))
 
 		if(!C.chatOutput || C.chatOutput.broken) // A player who hasn't updated his skin file.
 			continue
