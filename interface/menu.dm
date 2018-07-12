@@ -102,7 +102,7 @@ GLOBAL_LIST_EMPTY(menulist)
 /datum/verbs/menu/Icon/Scaling
 	checkbox = CHECKBOX_GROUP
 	name = "Scaling Mode"
-	default = /datum/verbs/menu/Icon/Scaling/verb/PS
+	default = /datum/verbs/menu/Icon/Scaling/verb/NN
 
 /datum/verbs/menu/Icon/Scaling/verb/NN()
 	set name = "@.winset \"mapwindow.map.zoom-mode=distort\""
