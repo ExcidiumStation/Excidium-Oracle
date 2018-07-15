@@ -376,3 +376,6 @@ DEBUG_ADMIN_HREFS
 
 ## Command to invoke on the local machine to process external commands
 #SERVICE_COMMAND python bot.py
+
+## How many loadout points players may spend in character setup. Default 5.
+#MAX_LOADOUT_POINTS 5
