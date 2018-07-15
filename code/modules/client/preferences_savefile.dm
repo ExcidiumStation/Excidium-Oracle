@@ -359,7 +359,6 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	eye_color		= sanitize_hexcolor(eye_color, 3, 0)
 	skin_tone		= sanitize_inlist(skin_tone, GLOB.skin_tones)
 	backbag			= sanitize_inlist(backbag, GLOB.backbaglist, initial(backbag))
-	gear			= sanitize_inlist(gear, GLOB.gearlist, initial(gear))
 	uplink_spawn_loc = sanitize_inlist(uplink_spawn_loc, GLOB.uplink_spawn_loc_list, initial(uplink_spawn_loc))
 	features["mcolor"]	= sanitize_hexcolor(features["mcolor"], 3, 0)
 	features["tail_unathi"]	= sanitize_inlist(features["tail_unathi"], GLOB.tails_list_unathi)
