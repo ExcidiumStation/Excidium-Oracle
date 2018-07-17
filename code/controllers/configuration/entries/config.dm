@@ -362,3 +362,6 @@ CONFIG_DEF(flag/irc_announce_new_game)
 CONFIG_DEF(string/service_command)
 
 CONFIG_DEF(flag/debug_admin_hrefs)
+
+CONFIG_DEF(number/max_loadout_points)
+	value = 5

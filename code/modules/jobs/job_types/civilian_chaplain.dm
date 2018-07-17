@@ -82,6 +82,7 @@ Chaplain
 
 	SSblackbox.set_details("religion_name","[new_religion]")
 	SSblackbox.set_details("religion_deity","[new_deity]")
+	..()
 
 /datum/outfit/job/chaplain
 	name = "Chaplain"
