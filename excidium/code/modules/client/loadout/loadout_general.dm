@@ -8,19 +8,19 @@
 
 /datum/gear/uplift
 	display_name = "pack of Uplifts"
-	path = /obj/item/weapon/storage/fancy/cigarettes/cigpack_uplift
+	path = /obj/item/storage/fancy/cigarettes/cigpack_uplift
 
 /datum/gear/robust
 	display_name = "pack of Robusts"
-	path = /obj/item/weapon/storage/fancy/cigarettes/cigpack_robust
+	path = /obj/item/storage/fancy/cigarettes/cigpack_robust
 
 /datum/gear/carp
 	display_name = "pack of Carps"
-	path = /obj/item/weapon/storage/fancy/cigarettes/cigpack_carp
+	path = /obj/item/storage/fancy/cigarettes/cigpack_carp
 
 /datum/gear/midori
 	display_name = "pack of Midoris"
-	path = /obj/item/weapon/storage/fancy/cigarettes/cigpack_midori
+	path = /obj/item/storage/fancy/cigarettes/cigpack_midori
 
 /datum/gear/cards
 	display_name = "deck of cards"
