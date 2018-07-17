@@ -19,7 +19,7 @@
 /datum/gear/suit/coat/job/sec
 	display_name = "winter coat, security"
 	path = /obj/item/clothing/suit/hooded/wintercoat/security
-	allowed_roles = list("Head of Security", "Master-at-Arms", "Detective", "Security Officer", "Security Pod Pilot")
+	allowed_roles = list("Head of Security", "Warden", "Detective", "Security Officer", "Brig Physician")
 
 /datum/gear/suit/coat/job/captain
 	display_name = "winter coat, captain"
@@ -34,17 +34,17 @@
 /datum/gear/suit/coat/job/sci
 	display_name = "winter coat, science"
 	path = /obj/item/clothing/suit/hooded/wintercoat/science
-	allowed_roles = list("Scientist", "Research Director")
+	allowed_roles = list("Research Director", "Scientist")
 
 /datum/gear/suit/coat/job/engi
 	display_name = "winter coat, engineering"
 	path = /obj/item/clothing/suit/hooded/wintercoat/engineering
-	allowed_roles = list("Chief Engineer", "Engineer", "Mechanic")
+	allowed_roles = list("Chief Engineer", "Station Engineer")
 
 /datum/gear/suit/coat/job/atmos
 	display_name = "winter coat, atmospherics"
 	path = /obj/item/clothing/suit/hooded/wintercoat/engineering/atmos
-	allowed_roles = list("Chief Engineer", "Life Support Specialist")
+	allowed_roles = list("Chief Engineer", "Atmospheric Technician")
 
 /datum/gear/suit/coat/job/hydro
 	display_name = "winter coat, hydroponics"
@@ -59,7 +59,7 @@
 /datum/gear/suit/coat/job/miner
 	display_name = "winter coat, miner"
 	path = /obj/item/clothing/suit/hooded/wintercoat/miner
-	allowed_roles = list("Miner")
+	allowed_roles = list("Shaft Miner")
 
 //JACKETS
 /datum/gear/suit/leather_jacket

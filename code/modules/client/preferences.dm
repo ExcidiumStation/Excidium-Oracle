@@ -2,7 +2,7 @@
 
 GLOBAL_LIST_EMPTY(preferences_datums)
 
-#define MAX_GEAR_COST CONFIG_GET(mumber/max_loadout_points)
+#define MAX_GEAR_COST CONFIG_GET(number/max_loadout_points)
 
 /datum/preferences
 	var/client/parent

@@ -363,5 +363,5 @@ CONFIG_DEF(string/service_command)
 
 CONFIG_DEF(flag/debug_admin_hrefs)
 
-CONFIG_DEF(mumber/max_loadout_points)
+CONFIG_DEF(number/max_loadout_points)
 	value = 5
