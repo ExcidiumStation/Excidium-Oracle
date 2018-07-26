@@ -26,7 +26,7 @@ AI
 		for(var/mob/living/silicon/robot/R in GLOB.silicon_mobs)
 			if(!R.connected_ai)
 				R.TryConnectToAI()
-
+	..()
 
 /datum/job/ai/config_check()
 	return CONFIG_GET(flag/allow_ai)
@@ -53,3 +53,4 @@ Cyborg
 /datum/job/cyborg/after_spawn(mob/living/silicon/robot/R, mob/M)
 	if(CONFIG_GET(flag/rename_cyborg))	//name can't be set in robot/New without the client
 		R.rename_self("cyborg", M.client)
+	..()

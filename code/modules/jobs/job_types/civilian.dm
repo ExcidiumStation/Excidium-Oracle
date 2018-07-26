@@ -21,6 +21,7 @@ Clown
 
 /datum/job/clown/after_spawn(mob/living/carbon/human/H, mob/M)
 	H.rename_self("clown", M.client)
+	..()
 
 /datum/outfit/job/clown
 	name = "Clown"
@@ -84,6 +85,7 @@ Mime
 
 /datum/job/mime/after_spawn(mob/living/carbon/human/H, mob/M)
 	H.rename_self("mime", M.client)
+	..()
 
 /datum/outfit/job/mime
 	name = "Mime"

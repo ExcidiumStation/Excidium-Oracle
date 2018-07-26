@@ -36,6 +36,8 @@
 		else
 			IRCBroadcast("New round starting on [SSmapping.config.map_name]!")
 
+	populate_gear_list()
+
 /world/proc/SetupExternalRSC()
 #if (PRELOAD_RSC == 0)
 	external_rsc_urls = world.file2list("config/external_rsc_urls.txt","\n")
@@ -285,8 +287,8 @@
 
 	s += "<b>[station_name()]</b>";
 	s += " ("
-	s += "<a href=\"http://\">" //Change this to wherever you want the hub to link to.
-	s += "Default"  //Replace this with something else. Or ever better, delete it and uncomment the game version.
+	s += "<a href=\"https://excidium.xyz/\">" //Change this to wherever you want the hub to link to.
+	s += "Website"  //Replace this with something else. Or ever better, delete it and uncomment the game version.
 	s += "</a>"
 	s += ")"
 
