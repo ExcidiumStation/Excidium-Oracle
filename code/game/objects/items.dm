@@ -273,18 +273,18 @@ GLOBAL_VAR_INIT(rpg_loot_items, FALSE)
 	if(istype(loc, /obj/item/storage))
 		//If the item is in a storage item, take it out
 		var/obj/item/storage/S = loc
-		S.remove_from_storage(src, user.loc)
+		S.remove_from_storage(src, S.loc)
 
 	if(throwing)
 		throwing.finalize(FALSE)
 	if(loc == user)
-		if(!user.dropItemToGround(src))
+		if(!user.temporarilyRemoveItemFromInventory(src))// changed this line from dropItemToGround() to this; not sure why it works, but it works ~Flatty
 			return
 
 	pickup(user)
 	add_fingerprint(user)
 	if(!user.put_in_active_hand(src))
-		dropped(user)
+		src.forceMove(user.loc)// this line had dropped() on it and I am also not sure why this works but it does ~Flatty
 
 
 /obj/item/attack_paw(mob/user)
@@ -295,7 +295,7 @@ GLOBAL_VAR_INIT(rpg_loot_items, FALSE)
 
 	if(istype(loc, /obj/item/storage))
 		var/obj/item/storage/S = loc
-		S.remove_from_storage(src, user.loc)
+		S.remove_from_storage(src, S.loc)
 
 	if(throwing)
 		throwing.finalize(FALSE)
@@ -541,7 +541,8 @@ GLOBAL_VAR_INIT(rpg_loot_items, FALSE)
 	var/obj/item/organ/eyes/eyes = M.getorganslot(ORGAN_SLOT_EYES)
 	if (!eyes)
 		return
-	if(eyes.eye_damage >= 10)
+	var/damage_to_eyes = eyes.get_damage_perc()
+	if(damage_to_eyes >= 10)
 		M.adjust_blurriness(15)
 		if(M.stat != DEAD)
 			to_chat(M, "<span class='danger'>Your eyes start to bleed profusely!</span>")
@@ -555,7 +556,7 @@ GLOBAL_VAR_INIT(rpg_loot_items, FALSE)
 			M.adjust_blurriness(10)
 			M.Unconscious(20)
 			M.Knockdown(40)
-		if (prob(eyes.eye_damage - 10 + 1))
+		if(prob(damage_to_eyes - 9))
 			if(M.become_blind())
 				to_chat(M, "<span class='danger'>You go blind!</span>")
 
@@ -723,3 +724,31 @@ GLOBAL_VAR_INIT(rpg_loot_items, FALSE)
 /obj/item/MouseExited()
 	deltimer(tip_timer)//delete any in-progress timer if the mouse is moved off the item before it finishes
 	closeToolTip(usr)
+
+/obj/item/proc/do_pickup_animation(turf/target)
+	set waitfor = FALSE
+	var/turf/T = get_turf(src)
+	var/image/I = image(icon = src, loc = loc, layer = layer + 0.1)
+	I.plane = GAME_PLANE
+	I.transform *= 0.75
+	I.appearance_flags = APPEARANCE_UI_IGNORE_ALPHA
+	flick_overlay(I, GLOB.clients, 6)
+	var/matrix/M = new
+	M.Turn(pick(-30, 30))
+
+	animate(I, transform = M, time = 1)
+	sleep(1)
+	animate(I, transform = matrix(), time = 1)
+	sleep(1)
+
+	if(QDELETED(target) || QDELETED(src))
+		return
+	var/to_x = (target.x - T.x) * 32
+	var/to_y = (target.y - T.y) * 32
+
+	if(!to_x && !to_y)
+		to_y = 20
+
+	animate(I, alpha = 175, pixel_x = to_x, pixel_y = to_y, time = 3, easing = CUBIC_EASING)
+	sleep(1)
+	animate(I, alpha = 0, time = 1)

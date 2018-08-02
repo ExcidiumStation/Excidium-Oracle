@@ -132,6 +132,12 @@
 	material_drop = /obj/item/stack/sheet/mineral/wood
 	material_drop_amount = 5
 
+/obj/structure/closet/coffin/handle_lock_addition()
+	return
+
+/obj/structure/closet/coffin/handle_lock_removal()
+	return
+
 /obj/structure/closet/wardrobe/red
 	name = "security wardrobe"
 	icon_door = "red"
@@ -251,8 +257,7 @@
 	new /obj/item/clothing/suit/hooded/wintercoat/medical(src)
 	new /obj/item/clothing/gloves/color/latex(src)
 	new /obj/item/clothing/head/soft/emt(src)
-	new /obj/item/clothing/head/helmet/space/paramedic(src)
-	new /obj/item/clothing/suit/space/paramedic(src)
+	new /obj/item/clothing/suit/space/hardsuit/medical/emt
 	new /obj/item/clothing/suit/storage/paramedic(src)
 	new /obj/item/clothing/suit/toggle/labcoat/emt(src)
 	new /obj/item/storage/box/bodybags(src)
