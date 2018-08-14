@@ -62,6 +62,7 @@
 	owner.update_transform()
 	owner.pass_flags |= PASSTABLE
 	owner.visible_message("<span class='danger'>[owner] suddenly shrinks!</span>", "<span class='notice'>Everything around you seems to grow..</span>")
+	owner.can_be_held = TRUE
 
 /datum/mutation/human/dwarfism/on_losing(mob/living/carbon/human/owner)
 	if(..())
@@ -70,6 +71,12 @@
 	owner.update_transform()
 	owner.pass_flags &= ~PASSTABLE
 	owner.visible_message("<span class='danger'>[owner] suddenly grows!</span>", "<span class='notice'>Everything around you seems to shrink..</span>")
+	owner.can_be_held = FALSE
+	if(istype(owner.loc, /obj/item/clothing/head/mob_holder))
+		owner.visible_message("<span class='warning'>[owner] falls [ismob(owner.loc.loc) ? "off" : "out"] of \the [owner.loc.loc]!")
+		owner.forceMove(get_turf(owner.loc))
+		owner.Knockdown(20)
+		qdel(owner.loc)
 
 /datum/mutation/human/clumsy
 
