@@ -195,14 +195,14 @@ SUBSYSTEM_DEF(persistence)
 
 	log_world("Saved [saved_messages.len] engraved messages on map [SSmapping.config.map_name]")
 
-	WRITE_FILE(chisel_messages_sav[SSmapping.config.map_name], json_encode(saved_messages))
+	WRITE_FILE(chisel_messages_sav[SSmapping.config.map_name], r_json_encode(saved_messages))
 
 /datum/controller/subsystem/persistence/proc/SaveChiselMessage(obj/structure/chisel_message/M)
 	saved_messages += list(M.pack()) // dm eats one list
 
 
 /datum/controller/subsystem/persistence/proc/CollectTrophies()
-	WRITE_FILE(trophy_sav, json_encode(saved_trophies))
+	WRITE_FILE(trophy_sav, r_json_encode(saved_trophies))
 
 /datum/controller/subsystem/persistence/proc/SaveTrophy(obj/structure/displaycase/trophy/T)
 	if(!T.added_roundstart && T.showpiece)

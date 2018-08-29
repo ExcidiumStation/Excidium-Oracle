@@ -949,7 +949,7 @@ GLOBAL_LIST_EMPTY(empty_playable_ai_cores)
 	raw_message = lang_treat(speaker, message_language, raw_message, spans, message_mode)
 	var/start = "Relayed Speech: "
 	var/namepart = "[speaker.GetVoice()][speaker.get_alt_name()]"
-	var/hrefpart = "<a href='?src=[REF(src)];track=[html_encode(namepart)]'>"
+	var/hrefpart = "<a href='?src=[REF(src)];track=[rhtml_encode(namepart)]'>"
 	var/jobpart
 
 	if (iscarbon(speaker))

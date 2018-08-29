@@ -511,7 +511,7 @@
 	name = "Lisa"
 	real_name = "Lisa"
 	gender = FEMALE
-	desc = "It's a corgi with a cute pink bow."
+	desc = "She's tearing you apart."
 	icon_state = "lisa"
 	icon_living = "lisa"
 	icon_dead = "lisa_dead"
