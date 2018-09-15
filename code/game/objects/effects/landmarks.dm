@@ -6,7 +6,7 @@
 	invisibility = INVISIBILITY_ABSTRACT
 
 /obj/effect/landmark/New()
-	..()
+	. = ..()
 	tag = text("landmark*[]", name)
 	GLOB.landmarks_list += src
 
@@ -321,7 +321,7 @@
 	name = "servant of ratvar spawn"
 
 /obj/effect/landmark/servant_of_ratvar/Initialize(mapload)
-	..()
+	. = ..()
 	GLOB.servant_spawns += loc
 	qdel(src)
 
@@ -331,7 +331,7 @@
 	icon_state = "x4"
 
 /obj/effect/landmark/city_of_cogs/Initialize(mapload)
-	..()
+	. = ..()
 	GLOB.city_of_cogs_spawns += loc
 	qdel(src)
 

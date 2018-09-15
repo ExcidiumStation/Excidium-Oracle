@@ -152,7 +152,7 @@
 	var/static/arena_reset = FALSE
 
 /obj/machinery/capture_the_flag/Initialize()
-	..()
+	. = ..()
 	if(!ctf_object_typecache)
 		ctf_object_typecache = typecacheof(list(
 			/turf,

@@ -35,7 +35,7 @@ INITIALIZE_IMMEDIATE(/mob/living/carbon/human/dummy)
 
 	handcrafting = new()
 
-	..()
+	. = ..()
 
 /mob/living/carbon/human/OpenCraftingMenu()
 	handcrafting.ui_interact(src)

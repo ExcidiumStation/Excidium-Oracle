@@ -431,7 +431,7 @@ SUBSYSTEM_DEF(shuttle)
 	//to_chat(world, "[COORD(topleft)] is TOPLEFT")
 	// Then create a transit docking port in the middle
 	var/coords = M.return_coords(0, 0, dock_dir)
-	//to_chat(world, json_encode(coords))
+	//to_chat(world, r_json_encode(coords))
 	/*  0------2
         |      |
         |      |

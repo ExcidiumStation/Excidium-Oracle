@@ -23,7 +23,7 @@
 
 
 /obj/item/clothing/head/helmet/Initialize()
-	..()
+	. = ..()
 
 /obj/item/clothing/head/helmet/sec
 	can_flashlight = 1
@@ -199,7 +199,7 @@
 	flags_2 = NONE
 
 /obj/item/clothing/head/helmet/knight/Initialize(mapload)
-	..()
+	. = ..()
 
 /obj/item/clothing/head/helmet/knight/blue
 	icon_state = "knight_blue"

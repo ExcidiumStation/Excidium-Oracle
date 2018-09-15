@@ -239,7 +239,7 @@
 
 
 /obj/screen/parallax_layer/Initialize(mapload, view)
-	..()
+	. = ..()
 	if (!view)
 		view = world.view
 	update_o(view)

@@ -57,7 +57,7 @@ GLOBAL_LIST_EMPTY(oui_file_cache)
 
 /datum/oracle_ui/themed/proc/soft_update_fields()
 	for(var/viewer in viewers)
-		var/json = json_encode(call(datasource, "oui_data")(viewer))
+		var/json = r_json_encode(call(datasource, "oui_data")(viewer))
 		call_js(viewer, "updateFields", list(json))
 
 /datum/oracle_ui/themed/proc/soft_update_all()

@@ -7,6 +7,7 @@
 	var/mergeable_decal = 1 //when two of these are on a same tile or do we need to merge them into just one?
 
 /obj/effect/decal/cleanable/Initialize(mapload)
+	. = ..()
 	if (random_icon_states && length(src.random_icon_states) > 0)
 		src.icon_state = pick(src.random_icon_states)
 	create_reagents(300)
@@ -17,7 +18,6 @@
 	if(smooth)
 		queue_smooth(src)
 		queue_smooth_neighbors(src)
-	..()
 
 /obj/effect/decal/cleanable/Destroy()
 	if(smooth)
