@@ -1,4 +1,7 @@
-sound/ambience/title1.ogg
-sound/ambience/title2.ogg
-sound/ambience/title3.ogg
-sound/ambience/clown.ogg
+excidium/sound/music/asteroid_theme.ogg
+excidium/sound/music/comet_haley.ogg
+excidium/sound/music/elibao.ogg
+excidium/sound/music/foregone_destruction.ogg
+excidium/sound/music/lysendraa.ogg
+excidium/sound/music/marhaba.ogg
+excidium/sound/music/treacherous_voyage.ogg
