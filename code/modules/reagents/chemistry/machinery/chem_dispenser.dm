@@ -9,7 +9,7 @@
 	idle_power_usage = 40
 	interact_offline = 1
 	resistance_flags = FIRE_PROOF | ACID_PROOF
-	circuit = /obj/item/circuitboard/machine/chem_dispenser 
+	circuit = /obj/item/circuitboard/machine/chem_dispenser
 	var/cell_type = /obj/item/stock_parts/cell/high
 	var/obj/item/stock_parts/cell/cell
 	var/powerefficiency = 0.01
@@ -277,6 +277,7 @@
 	icon = 'goon/icons/obj/chemical.dmi'
 	icon_state = "soda_dispenser"
 	amount = 10
+	circuit = /obj/item/circuitboard/machine/chem_dispenser/drinks
 	dispensable_reagents = list(
 		"water",
 		"ice",
@@ -314,6 +315,7 @@
 	anchored = TRUE
 	icon = 'goon/icons/obj/chemical.dmi'
 	icon_state = "booze_dispenser"
+	circuit = /obj/item/circuitboard/machine/chem_dispenser/drinks/beer
 	dispensable_reagents = list(
 		"beer",
 		"kahlua",

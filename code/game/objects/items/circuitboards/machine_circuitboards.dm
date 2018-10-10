@@ -740,3 +740,11 @@
 	name = "Circulator/Heat Exchanger (Machine Board)"
 	build_path = /obj/machinery/atmospherics/components/binary/circulator
 	req_components = list()
+
+/obj/item/circuitboard/machine/chem_dispenser/drinks
+	name = "Soda Dispenser (Machine Board)"
+	build_path = /obj/machinery/chem_dispenser/drinks
+
+/obj/item/circuitboard/machine/chem_dispenser/drinks/beer
+	name = "Booze Dispenser (Machine Board)"
+	build_path = /obj/machinery/chem_dispenser/drinks/beer

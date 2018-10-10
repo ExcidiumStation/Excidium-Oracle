@@ -440,3 +440,17 @@
 		id = "teg"
 		build_path = /obj/item/circuitboard/machine/generator
 		category = list ("Engineering Machinery")
+
+	/datum/design/board/soda_dispenser
+		name = "Machine Design (Portable Soda Dispenser Board)"
+		desc = "The circuit board for a portable soda dispenser."
+		id = "soda_dispenser"
+		build_path = /obj/item/circuitboard/machine/chem_dispenser/drinks
+		category = list ("Misc. Machinery")
+
+	/datum/design/board/beer_dispenser
+		name = "Machine Design (Portable Booze Dispenser Board)"
+		desc = "The circuit board for a portable booze dispenser."
+		id = "beer_dispenser"
+		build_path = /obj/item/circuitboard/machine/chem_dispenser/drinks/beer
+		category = list ("Misc. Machinery")
